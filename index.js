@@ -6,7 +6,7 @@ const db = require("./config/mongo");
 const cors = require("cors");
 
 const listRoute = require("./routes/list");
-const registerRoute = require("./routes/register")
+const registerRoute = require("./routes/register");
 const signinRoute = require("./routes/signin");
 const contactRoute = require("./routes/contact");
 
@@ -19,12 +19,11 @@ app.get("/", async (req, res) => {
 
 app.use(listRoute);
 
-app.use(registerRoute)
+app.use(registerRoute);
 
-app.use(signinRoute)
+app.use(signinRoute);
 
-app.use(contactRoute)
-
+app.use(contactRoute);
 
 const port = 3000;
 app.listen(process.env.PORT || port, process.env.IP, () => {

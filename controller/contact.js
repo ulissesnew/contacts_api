@@ -8,7 +8,6 @@ const addContact = async (form) => {
 
 const readContact = async (email) => {
   const contact = await Contact.findOne({ email: email });
-  console.log(contact);
   return contact;
 };
 

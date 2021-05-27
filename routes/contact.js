@@ -43,7 +43,6 @@ router.patch("/contact/update/:email", auth, async (req, res) => {
   const form = req.body.form;
   const contact = await updateContact(email, form);
 
-  console.log(contact);
   try {
     if (contact === null) {
       res.status(400).json({ error: "user not found" });
