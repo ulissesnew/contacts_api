@@ -4,6 +4,7 @@ const app = express();
 var bodyParser = require("body-parser");
 const db = require("./config/mongo");
 const cors = require("cors");
+var morgan = require('morgan')
 
 const listRoute = require("./routes/list");
 const registerRoute = require("./routes/register");
@@ -12,6 +13,7 @@ const contactRoute = require("./routes/contact");
 
 app.use(bodyParser.json());
 app.use(cors());
+app.use(morgan("combined"));
 
 app.get("/", async (req, res) => {
   res.status(200).json("contacts api");

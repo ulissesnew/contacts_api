@@ -15,7 +15,6 @@ router.post("/register", checkLogin, async (req, res) => {
 
   if (form) {
     const response = await registerController(form);
-    console.log(response);
     if (response) {
       res.status(200).json({ message: "success", token: response });
     } else {
